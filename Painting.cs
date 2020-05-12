@@ -9,7 +9,7 @@ namespace C_OOP_Assignment
         {
             public virtual void greet()
             {
-                Console.WriteLine("=============**~** WELCOME TO MY ARTWORK COLLECTION **~** =================");
+                Console.WriteLine("===============**~**~** WELCOME TO MY ARTWORK COLLECTION **~**~**================");
             }
             //Inheritance 
             class Collection : Painting
@@ -73,10 +73,11 @@ namespace C_OOP_Assignment
                 }
             }
             //Abstraction ( this information will not be displayed to public)
-            abstract class PaintingPrice
+            abstract class Price: Painting
             {
-                public void myPaintingPrice()
+                public void PaintingPrice()
                 {
+                   
                     Console.WriteLine("I bought this Painting for $500 in an Auction at West Edmonton mall");
                 }
             }
@@ -86,13 +87,15 @@ namespace C_OOP_Assignment
                 static void Main(string[] args)
                 {
                     Painting newPainting = new Painting();
-                    Collection myCollection = new Collection();
-                    // PaintingPrice PaintingPrice= new PaintingPrice();
+                   Painting paintingPrice = new Painting();
+                  Collection myCollection = new Collection();
+                
                     newPainting.PaintingName = "The Last Supper";
                     newPainting.PaintingArtist = "Leonardo da Vinci";
                     newPainting.PaintingMedium = "Mural painting";
                     newPainting.PaintingYear = 1495;
                     myCollection.collectionYear = 2020;
+                  
 
                     newPainting.greet();
                     Console.WriteLine("Name: " + newPainting.PaintingName);
